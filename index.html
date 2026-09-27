@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Go On A Date With Me?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <div class="background-photos" aria-hidden="true">
+      <span class="bg-photo photo-one" style="--left: 8%; --top: 6%; --rotate: -16deg;"></span>
+      <span class="bg-photo photo-two" style="--left: 18%; --top: 48%; --rotate: 11deg;"></span>
+      <span class="bg-photo photo-three" style="--left: 62%; --top: 14%; --rotate: 18deg;"></span>
+      <span class="bg-photo photo-four" style="--left: 74%; --top: 58%; --rotate: -15deg;"></span>
+      <span class="bg-photo photo-five" style="--left: 48%; --top: 74%; --rotate: 9deg;"></span>
+      <span class="bg-photo photo-six" style="--left: 86%; --top: 22%; --rotate: -10deg;"></span>
+    </div>
+
+    <main class="container">
+      <section class="question-panel" aria-label="Date proposal card">
+        <div class="photo-figure">
+          <img
+            src="image/she2.jpg"
+            alt="Our photo"
+            class="main-photo"
+            onerror="this.style.display='none'; this.parentElement.classList.add('image-fallback');"
+          />
+          <div class="image-overlay">
+            <button type="button" class="mini-tag favorite-message-trigger" id="favoriteMessageTrigger" aria-label="Open a heartfelt message">
+              our favorite moment
+            </button>
+            <button type="button" class="heart-mark" id="galleryTrigger" aria-label="Open our photo gallery">
+              ♡
+            </button>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="status-row">
+            <span class="status-pill">A little question</span>
+          </div>
+
+          <p class="eyebrow">A little question for you...</p>
+          <h1 class="typing-heading">
+            <span class="typing-line" data-text="Will you"></span><br />
+            <span class="typing-line" data-text="go on a date with me?"></span>
+          </h1>
+          <p class="message">
+            Just you, me, and a little time together.<br />
+            So... what do you say? <span>♡</span>
+          </p>
+
+          <div class="memory-grid" aria-label="Our favorite memories">
+            <article class="memory-card">
+              <h3>First memory</h3>
+              <p>Late-night laughs and your smile I still replay.</p>
+            </article>
+
+            <article class="memory-card">
+              <h3>Favorite song</h3>
+              <p>The song we keep on repeat when we’re together.</p>
+            </article>
+
+            <article class="memory-card">
+              <h3>Favorite place</h3>
+              <p>Anywhere with you feels like home.</p>
+            </article>
+          </div>
+
+          <div class="feature-list">
+            <span>good vibes</span>
+            <span>cozy night</span>
+            <span>our playlist</span>
+          </div>
+
+          <div class="button-row">
+            <button id="yesButton" class="yes-button" type="button">
+              Yes, absolutely ♡
+            </button>
+            <button id="noButton" class="no-button" type="button">
+              No
+            </button>
+          </div>
+
+          <p id="hint" class="hint">Choose carefully... hehe.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        This website was proudly designed and developed by
+        <strong>Joshua C. Godilos</strong>, especially for his girlfriend,
+        <strong>Sheehan T. Cago</strong>.
+      </p>
+
+      <p>Made with a little creativity, a lot of effort, and even more love. ♡</p>
+
+      <p class="footer-italic">
+        Because sometimes, asking someone out deserves its own little website. ♡
+      </p>
+
+      <p class="footer-signature">
+        © 2026 Joshua C. Godilos — Made with love for Sheehan T. Cago.
+      </p>
+    </footer>
+
+    <section id="galleryModal" class="gallery-modal" aria-hidden="true">
+      <div class="gallery-backdrop" data-close-gallery></div>
+      <div class="gallery-panel">
+        <div class="gallery-header">
+          <div>
+            <p class="eyebrow">Our memories</p>
+            <h3>Photos together</h3>
+          </div>
+          <button type="button" class="gallery-close" id="closeGallery" aria-label="Close gallery">
+            ×
+          </button>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="image/she1.jpg" alt="Our memory one" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="image/she2.jpg" alt="Our memory two" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="image/she3.jpg" alt="Our memory three" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="image/she4.jpg" alt="Our memory four" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="image/she5.jpg" alt="Our memory five" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="image/she6.jpg" alt="Our memory six" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="favoriteMessageModal" class="favorite-message-modal" aria-live="polite" aria-hidden="true">
+      <div class="favorite-message-backdrop" data-close-favorite-message></div>
+      <div class="favorite-message-card">
+        <button type="button" class="favorite-message-close" id="closeFavoriteMessage" aria-label="Close heartfelt message">
+          ×
+        </button>
+
+        <div class="favorite-message-content">
+          <p class="eyebrow">A little message</p>
+          <h3>A Little Message for You, Sheehan ♡</h3>
+
+          <div class="favorite-message-copy">
+            <p>I honestly don't know where to start with this message.</p>
+            <p>
+              Maybe I should start by saying that I made this little website because I wanted to ask you something in a way that you'd probably never expect. I could have simply sent you a message and asked, <em>“Do you want to go on a date with me?”</em> — but somehow, that didn't feel special enough.
+            </p>
+            <p>
+              So I decided to make something instead.
+            </p>
+            <p>
+              I know it's just a simple little website, but I put time, effort, and a piece of myself into it. Every little detail was made with you in mind. I wanted you to have something you could look back on and remember that, at one point, someone thought you were special enough to deserve an entire website just to ask you out. ♡
+            </p>
+            <p>
+              I'm not really sure what the future holds, and I don't want to make this more complicated than it needs to be. I just know that I enjoy having you around, I appreciate the moments we share, and I'd love the chance to spend some time with you — just the two of us, away from everything else for a while.
+            </p>
+            <p>So, Sheehan...</p>
+            <p>
+              This is me finally asking.
+              <strong>Will you go on a date with me?</strong> ♡
+            </p>
+            <p>
+              And whatever your answer is, thank you for taking the time to read this little message and for being someone worth making all of this for.
+            </p>
+            <p>But between you and me...</p>
+            <p>
+              I'm really hoping you click <strong>YES</strong>. ♡
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="laterMessageModal" class="later-message-modal" aria-live="polite" aria-hidden="true">
+      <div class="later-message-backdrop" data-close-later-message></div>
+      <div class="later-message-card">
+        <button type="button" class="later-message-close" id="closeLaterMessage" aria-label="Close message">
+          ×
+        </button>
+
+        <div class="later-message-visual">
+          <img id="laterMessageImage" src="image/she2.jpg" alt="A sweet message" />
+        </div>
+
+        <div class="later-message-body">
+          <p class="eyebrow">A little note</p>
+          <h3 id="laterMessageTitle">Take your time</h3>
+          <p id="laterMessageText">No rush, I’ll still be here when your heart is ready. ♡</p>
+          <button type="button" id="laterMessageConfirm" class="later-message-button">I’ll be ready soon</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="plannerPage" class="planner-page" aria-live="polite">
+      <div class="planner-card">
+        <div class="heart-badge">♥</div>
+        <p class="eyebrow">Let’s plan it</p>
+        <h2>Pick our date details</h2>
+
+        <form id="dateForm" class="date-form">
+          <div class="form-grid">
+            <label class="field">
+              <span>Date</span>
+              <input type="date" id="dateInput" name="date" required />
+            </label>
+
+            <label class="field">
+              <span>Time</span>
+              <input type="time" id="timeInput" name="time" required />
+            </label>
+
+            <label class="field full-width">
+              <span>Place</span>
+              <input
+                type="text"
+                id="placeInput"
+                name="place"
+                placeholder="e.g. cafe, park, rooftop"
+                required
+              />
+            </label>
+          </div>
+
+          <div class="date-preview" aria-live="polite">
+            <p class="preview-label">Our date</p>
+            <strong id="previewSummary">Saturday at 7:00 PM — rooftop dinner</strong>
+          </div>
+
+          <div class="planner-actions">
+            <button type="button" id="laterButton" class="secondary-button">
+              Maybe later
+            </button>
+            <button type="submit" class="primary-button">
+              Make it official
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section id="datePage" class="date-page" aria-live="polite">
+      <div class="floating-hearts-layer" aria-hidden="true"></div>
+
+      <div class="date-card">
+        <div class="heart-badge">♥</div>
+        <p class="eyebrow">It's a date!</p>
+        <h2>Then it’s officially a date. ♡</h2>
+
+        <div class="date-visual">
+          <div class="place-photo-container">
+            <img
+              src="images/date-place.jpg"
+              alt="Our date place"
+              class="place-photo"
+              onerror="this.style.display='none'; this.parentElement.classList.add('image-fallback');"
+            />
+          </div>
+        </div>
+
+        <div class="date-details">
+          <article class="detail">
+            <strong>Date</strong>
+            <p id="finalDateText">Saturday, October 10, 2026</p>
+          </article>
+
+          <article class="detail">
+            <strong>Time</strong>
+            <p id="finalTimeText">6:00 PM</p>
+          </article>
+
+          <article class="detail">
+            <strong>Place</strong>
+            <p id="finalPlaceText">Our favorite place</p>
+          </article>
+        </div>
+
+        <p class="our-date-note" id="ourDateNote">
+          Saturday at 7:00 PM — rooftop dinner
+        </p>
+
+        <button id="downloadDateButton" class="download-button" type="button">
+          Download date card
+        </button>
+
+        <p class="final-message">
+          I can’t wait to spend some time with you.<br />
+          See you there.
+        </p>
+      </div>
+    </section>
+
+    <audio id="galleryAudio" src="syempre.wav" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
