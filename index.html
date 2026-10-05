@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="Image/Heart1.png">
+    <meta
+      name="description"
+      content="A romantic date proposal website made for the one you love."
+    />
+    <title>Will You Go On A Date With Me?</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+  </head>
+
+  <body>
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+    <div class="background-photos" aria-hidden="true">
+      <span class="bg-photo photo-one" style="--left: 8%; --top: 6%; --rotate: -16deg;"></span>
+      <span class="bg-photo photo-two" style="--left: 18%; --top: 48%; --rotate: 11deg;"></span>
+      <span class="bg-photo photo-three" style="--left: 62%; --top: 14%; --rotate: 18deg;"></span>
+      <span class="bg-photo photo-four" style="--left: 74%; --top: 58%; --rotate: -15deg;"></span>
+      <span class="bg-photo photo-five" style="--left: 48%; --top: 74%; --rotate: 9deg;"></span>
+      <span class="bg-photo photo-six" style="--left: 86%; --top: 22%; --rotate: -10deg;"></span>
+    </div>
+
+    <div class="page-shell">
+      <header class="topbar">
+        <a href="#home" class="brand" aria-label="Go to home section">Sheehan & Me</a>
+
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#story">Our Story</a>
+          <a href="#memories">Memories</a>
+        </nav>
+      </header>
+
+      <main id="home" class="content-wrap">
+        <section class="hero-section">
+          <div class="hero-copy">
+            <div class="status-row">
+              <span class="status-pill">A little question</span>
+            </div>
+
+            <p class="eyebrow">For the woman I like most</p>
+            <h1 class="typing-heading" aria-label="Will you go on a date with me?">
+              <span class="typing-line" data-text="Will you"></span><br />
+              <span class="typing-line" data-text="go on a date with me?"></span>
+            </h1>
+
+            <p class="message">
+              Just you, me, and a little bit of time away from everything else.<br />
+              I’d really love to take you out and make a sweet memory together. <span>♡</span>
+            </p>
+
+            <div class="mini-stats" aria-label="Highlights of our connection">
+              <div class="mini-stat">
+                <strong>01</strong>
+                <span>Laughs</span>
+              </div>
+              <div class="mini-stat">
+                <strong>02</strong>
+                <span>Vibes</span>
+              </div>
+              <div class="mini-stat">
+                <strong>03</strong>
+                <span>Plans</span>
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button id="yesButton" class="yes-button" type="button">Yes, absolutely ♡</button>
+              <button id="noButton" class="no-button" type="button">No</button>
+            </div>
+
+            <p id="hint" class="hint">Choose carefully... hehe.</p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="photo-frame">
+              <img
+                src="Image/she2.jpg"
+                alt="A beautiful photo together"
+                class="main-photo"
+                onerror="this.style.display='none'; this.parentElement.classList.add('image-fallback');"
+              />
+              <div class="image-overlay">
+                <button
+                  type="button"
+                  class="mini-tag favorite-message-trigger"
+                  id="favoriteMessageTrigger"
+                  aria-label="Open a heartfelt message"
+                >
+                  Our favorite moment
+                </button>
+                <button type="button" class="heart-mark" id="galleryTrigger" aria-label="Open photo gallery">
+                  ♡
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="story" class="story-section">
+          <div class="section-heading">
+            <p class="eyebrow">Our story</p>
+            <h2>Little things that made you unforgettable.</h2>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-card">
+              <span class="story-number">01</span>
+              <h3>Your smile</h3>
+              <p>
+                It somehow makes everything feel lighter, kinder, and far more beautiful than it did before.
+              </p>
+            </article>
+
+            <article class="story-card">
+              <span class="story-number">02</span>
+              <h3>Our talks</h3>
+              <p>
+                Even small conversations with you turn into little memories I keep replaying when I’m alone.
+              </p>
+            </article>
+
+            <article class="story-card">
+              <span class="story-number">03</span>
+              <h3>How you feel</h3>
+              <p>
+                The way you care and the way you make me feel seen is one of the safest and sweetest feelings I know.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="memories" class="memories-section">
+          <div class="section-heading center">
+            <p class="eyebrow">Favorite memories</p>
+            <h2>Things I hope we get to make more of.</h2>
+          </div>
+
+          <div class="memory-grid">
+            <article class="memory-card">
+              <div class="memory-icon">♥</div>
+              <h3>First memory</h3>
+              <p>Late-night laughs and the kind of smiles I still think about when the day is quiet.</p>
+            </article>
+
+            <article class="memory-card">
+              <div class="memory-icon">♫</div>
+              <h3>Favorite song</h3>
+              <p>The music that somehow fits us perfectly, even when we’re just sitting together in silence.</p>
+            </article>
+
+            <article class="memory-card">
+              <div class="memory-icon">✦</div>
+              <h3>Favorite place</h3>
+              <p>Anywhere with you feels like home and I’d happily spend hours there just listening to you talk.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="reasons-section">
+          <div class="section-heading">
+            <p class="eyebrow">Why I like you</p>
+            <h2>There are a lot of reasons, but these are the ones I keep returning to.</h2>
+          </div>
+
+          <div class="reason-grid">
+            <div class="reason-card">
+              <h3>Your warmth</h3>
+              <p>You make ordinary moments feel more special without even trying.</p>
+            </div>
+            <div class="reason-card">
+              <h3>Your kindness</h3>
+              <p>You notice people, you make them feel comfortable, and that means a lot to me.</p>
+            </div>
+            <div class="reason-card">
+              <h3>Your presence</h3>
+              <p>Being around you feels calm, happy, and somehow like a place I want to stay in longer.</p>
+            </div>
+            <div class="reason-card">
+              <h3>My feelings</h3>
+              <p>I’m honest when I say I enjoy your company and I’d love the chance to know you even more.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-preview" aria-label="Our photo gallery preview">
+          <div class="section-heading center">
+            <p class="eyebrow">Just You. ♡</p>
+            <h2>The Many Sides of You</h2>
+          </div>
+
+          <div class="gallery-grid">
+            <figure class="gallery-item tall">
+              <img src="Image/she1.jpg" alt="Memory one" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="Image/she2.jpg" alt="Memory two" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="Image/she3.jpg" alt="Memory three" />
+            </figure>
+            <figure class="gallery-item wide">
+              <img src="Image/she4.jpg" alt="Memory four" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="Image/she5.jpg" alt="Memory five" />
+            </figure>
+            <figure class="gallery-item">
+              <img src="Image/she10.jpg" alt="Memory six" />
+            </figure>
+             <figure class="gallery-item">
+              <img src="Image/she11.jpg" alt="Memory six" />
+            </figure>
+          </div>
+
+          <div class="gallery-cta">
+            <button type="button" class="secondary-button gallery-open" id="galleryOpenButton">See more photos</button>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          This website was made with a little effort, a little creativity, and a lot of love — all for you,
+          <strong>Sheehan</strong>.
+        </p>
+        <p>Made with heart, patience, and a huge smile thinking about our next date together. ♡</p>
+        <p class="footer-signature">© 2026 Joshua C. Godilos — Designed with love for Sheehan T. Cago.</p>
+      </footer>
+    </div>
+
+    <section id="agreementView" class="agreement-view hidden" aria-hidden="true" aria-labelledby="agreementTitle">
+      <div class="agreement-card">
+        <button type="button" class="agreement-close" id="closeAgreement" aria-label="Close date agreement">×</button>
+        <div class="agreement-heading">
+          
+          <p class="eyebrow">A romantic keepsake</p>
+          <h2 id="agreementTitle">OFFICIAL DATE AGREEMENT</h2>
+        </div>
+
+        <div class="agreement-party-lines">
+          <p><strong>Sheehan T. Cago</strong><span>("Girlfriend")</span></p>
+          <p><strong>Joshua C. Godilos</strong><span>("Boyfriend")</span></p>
+        </div>
+
+        <p class="agreement-legal-intro">
+          This Agreement ("Agreement") establishes a mutually agreed romantic date between the following
+          undersigned parties. Herein referred to collectively as the "Parties", it is entered into for the purpose
+          of establishing the terms and understanding of their planned date. The Parties hereby agree to the
+          following provisions:
+        </p>
+
+        <div class="agreement-provisions">
+          <section>
+            <h3>SECTION I: DATE PURPOSE</h3>
+            <p><strong>1.1</strong> The Parties agree to spend meaningful time together and enjoy a date in a respectful and comfortable environment.</p>
+            <p><strong>1.2</strong> The purpose of this Agreement is to create a memorable experience involving good conversation, food, laughter, quality time, and shared memories.</p>
+            <p><strong>1.3</strong> Both Parties acknowledge that the date should be based on mutual agreement, comfort, and willingness to participate.</p>
+          </section>
+          <section>
+            <h3>SECTION II: DATE COMMITMENTS</h3>
+            <p><strong>2.1</strong> The Parties agree to make reasonable efforts to attend the agreed date at the selected time and location.</p>
+            <p><strong>2.2</strong> The Parties agree to enjoy the date without unnecessary pressure and to respect each other's personal boundaries.</p>
+            <p><strong>2.3</strong> At least one photograph may be taken during the date for memory purposes, provided that both Parties are comfortable with it.</p>
+          </section>
+          <section>
+            <h3>SECTION III: IMPORTANT PROVISIONS</h3>
+            <p><strong>3.1</strong> Good food is strongly encouraged.</p>
+            <p><strong>3.2</strong> Good conversation is highly recommended.</p>
+            <p><strong>3.3</strong> Laughing at each other's jokes is appreciated, even when the jokes are objectively questionable.</p>
+            <p><strong>3.4</strong> The Parties agree that the primary objective is to make a genuinely good memory together.</p>
+            <p><strong>3.5</strong> This Agreement is a romantic keepsake and does not create a legally enforceable relationship, obligation, or contract.</p>
+          </section>
+        </div>
+
+        <form id="agreementForm" class="agreement-form">
+          <div class="agreement-part-heading">
+            <h3>OFFICIAL DATE AGREEMENT</h3>
+            <p>PART II</p>
+            <h3>DATE INFORMATION FORM</h3>
+            <p>Please complete the following information to confirm the details of the proposed date.</p>
+          </div>
+          <div class="agreement-fields">
+            <label class="field">
+              <span>1. Full Name</span>
+              <input id="agreementName" name="fullName" type="text" autocomplete="name" required />
+            </label>
+            <label class="field">
+              <span>2. Preferred Date</span>
+              <input id="agreementDate" name="preferredDate" type="date" required />
+            </label>
+            <label class="field">
+              <span>3. Preferred Time</span>
+              <input id="agreementTime" name="preferredTime" type="time" required />
+            </label>
+            <label class="field">
+              <span>4. Preferred Location</span>
+              <input id="agreementPlace" name="preferredPlace" type="text" required />
+            </label>
+            <label class="field">
+              <span>5. Preferred Activity</span>
+              <input id="agreementActivity" name="preferredActivity" type="text" required />
+            </label>
+            <label class="field agreement-message-field">
+              <span>6. A Little Message for Your Boyfriend</span>
+              <textarea id="agreementMessage" name="message" rows="3"></textarea>
+            </label>
+          </div>
+
+          <div class="signature-block">
+            <label class="field" for="signatureCanvas"><span>Digital Signature - Signature of Girlfriend</span></label>
+            <canvas id="signatureCanvas" aria-label="Draw your signature here"></canvas>
+            <div class="signature-actions">
+              <span>Sign with your finger or mouse</span>
+              <button id="clearSignatureButton" class="secondary-button" type="button">Clear Signature</button>
+            </div>
+          </div>
+
+          <div class="agreement-status agreement-status-pending">AGREEMENT STATUS: ☐ ACCEPTED &nbsp; ☒ PENDING</div>
+
+          <div class="agreement-checks">
+            <p class="agreement-checks-heading">ACKNOWLEDGEMENT</p>
+            <label><input type="checkbox" name="readAgreement" required /> <span>I have read and understood the provisions of this Agreement.</span></label>
+            <label><input type="checkbox" name="keepsakeAgreement" required /> <span>I understand that this is a playful romantic keepsake and not a legally binding contract.</span></label>
+            <label><input type="checkbox" name="agreeToDate" required /> <span>I agree to the proposed date and its arrangements.</span></label>
+          </div>
+
+          <button id="acceptAgreementButton" class="primary-button agreement-primary" type="submit" disabled>
+            Accept &amp; Sign Agreement
+          </button>
+        </form>
+
+        <section id="agreementCompleted" class="agreement-completed hidden" aria-live="polite">
+          <div class="agreement-part-heading">
+            <h3>OFFICIAL DATE AGREEMENT</h3>
+            <p>PART II</p>
+            <h3>DATE INFORMATION FORM</h3>
+          </div>
+          <div class="agreement-status agreement-status-accepted">AGREEMENT STATUS: ☒ ACCEPTED &nbsp; ☐ PENDING</div>
+          <dl class="agreement-details">
+            <div><dt>1. Full Name</dt><dd id="completedName"></dd></div>
+            <div><dt>2. Preferred Date</dt><dd id="completedDate"></dd></div>
+            <div><dt>3. Preferred Time</dt><dd id="completedTime"></dd></div>
+            <div><dt>4. Preferred Location</dt><dd id="completedPlace"></dd></div>
+            <div><dt>5. Preferred Activity</dt><dd id="completedActivity"></dd></div>
+            <div id="completedMessageRow" class="completed-message-row"><dt>6. A Little Message for Your Boyfriend</dt><dd id="completedMessage"></dd></div>
+          </dl>
+          <div class="agreement-acknowledgement-complete">
+            <h3>ACKNOWLEDGEMENT</h3>
+            <p>☒ I have read and understood the provisions of this Agreement.</p>
+            <p>☒ I understand that this is a playful romantic keepsake and not a legally binding contract.</p>
+            <p>☒ I agree to the proposed date and its arrangements.</p>
+          </div>
+          <div class="agreement-signatures">
+            <div class="completed-signature">
+              <span>DIGITAL SIGNATURE - SIGNATURE OF GIRLFRIEND</span>
+              <img id="completedSignature" alt="Sheehan's digital signature" />
+              <p>Date Signed: <strong id="completedSigningDate"></strong></p>
+            </div>
+            <div class="boyfriend-signature">
+              <span>BOYFRIEND</span>
+              <div class="boyfriend-signature-line">Joshua C. Godilos</div>
+              <p>Date: <strong id="completedBoyfriendDate"></strong></p>
+            </div>
+          </div>
+        </section>
+
+        <div id="agreementActions" class="agreement-actions hidden">
+          <button id="downloadAgreementButton" class="secondary-button" type="button">Download Agreement</button>
+          <button id="printAgreementButton" class="secondary-button" type="button">Print Agreement</button>
+          <button id="planDateButton" class="primary-button" type="button">Let's Plan Our Date ♡</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="galleryModal" class="gallery-modal hidden" aria-hidden="true">
+      <div class="gallery-backdrop" data-close-gallery></div>
+      <div class="gallery-panel">
+        <div class="gallery-header">
+          <div>
+            <p class="eyebrow">Our memories</p>
+            <h3>The Person Behind My Smile</h3>
+          </div>
+          <button type="button" class="gallery-close" id="closeGallery" aria-label="Close gallery">×</button>
+        </div>
+
+        <div class="gallery-grid-modal">
+          <figure class="gallery-item-modal">
+            <img src="Image/she1.jpg" alt="Our memory one" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she2.jpg" alt="Our memory two" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she3.jpg" alt="Our memory three" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she4.jpg" alt="Our memory four" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she5.jpg" alt="Our memory five" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she6.jpg" alt="Our memory six" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she7.jpg" alt="Our memory seven" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she8.jpg" alt="Our memory eight" />
+          </figure>
+          <figure class="gallery-item-modal">
+            <img src="Image/she9.jpg" alt="Our memory nine" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="favoriteMessageModal" class="favorite-message-modal hidden" aria-live="polite" aria-hidden="true">
+      <div class="favorite-message-backdrop" data-close-favorite-message></div>
+      <div class="favorite-message-card">
+        <button type="button" class="favorite-message-close" id="closeFavoriteMessage" aria-label="Close heartfelt message">×</button>
+
+        <div class="favorite-message-content">
+          <p class="eyebrow">A little message</p>
+          <h3>For you, Sheehan ♡</h3>
+
+          <div class="favorite-message-copy">
+            <p>Hello baby. If someone had told me before that two unexpected moments with you would eventually become the beginning of something this special, I probably wouldn't have believed them. But looking at where we are now, I'm honestly just grateful that those moments happened, because somehow, they led me to you.</p>
+            <p>I didn't think that those moments would mean this much to me. At first, I probably didn't even understand what I was feeling, but as time passed, I slowly realized that I genuinely like you. Not just because of the moments we shared, but because of the person you are and the way you make me feel whenever I'm with you.</p>
+            <p>It's funny how sometimes the things we never plan for end up becoming some of the things we treasure the most. I never imagined that you would become someone this important to me. Everything just happened naturally, without either of us really forcing anything, and somehow, here we are.</p>
+            <p>I'm grateful for every conversation, every little moment, every laugh, every random thing we do, and even the small things that you probably don't realize mean a lot to me. I love how comfortable I can be around you, and I love that I can simply be myself when I'm with you.</p>
+            <p>I don't know exactly where this journey will take us, but I know that I'm happy that it started with you. And if someone told me before that those unexpected moments would eventually lead me here, writing this for you, I probably wouldn't believe them.</p>
+            <p>But now, I wouldn't change how everything happened. Maybe it was unexpected, maybe it was sudden, and maybe neither of us planned for it—but I'm really glad it happened.</p>
+            <p>I'm really grateful that I met you, baby. And more than anything, I'm grateful that somewhere along the way, <strong>we found each other.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="laterMessageModal" class="later-message-modal hidden" aria-live="polite" aria-hidden="true">
+      <div class="later-message-backdrop" data-close-later-message></div>
+      <div class="later-message-card">
+        <button type="button" class="later-message-close" id="closeLaterMessage" aria-label="Close message">×</button>
+
+        <div class="later-message-visual">
+          <img id="laterMessageImage" src="Image/she2.jpg" alt="A sweet moment" />
+        </div>
+
+        <div class="later-message-body">
+          <p class="eyebrow">A little note</p>
+          <h3 id="laterMessageTitle">Take your time</h3>
+          <p id="laterMessageText">No rush, I’ll still be here when your heart is ready. ♡</p>
+          <button type="button" id="laterMessageConfirm" class="later-message-button">I’ll be ready soon</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="datePage" class="date-page hidden" aria-live="polite">
+      <div class="floating-hearts-layer" aria-hidden="true"></div>
+
+      <div class="date-card">
+        <div class="heart-badge">♥</div>
+        <p class="eyebrow">It’s a date!</p>
+        <h2>Then it’s officially our date. ♡</h2>
+
+        <div class="date-visual">
+          <div class="place-photo-container">
+            <img
+              src="Image/she2.jpg"
+              alt="Our date place"
+              class="place-photo"
+              onerror="this.style.display='none'; this.parentElement.classList.add('image-fallback');"
+            />
+          </div>
+        </div>
+
+        <div class="date-details">
+          <article class="detail">
+            <strong>Date</strong>
+            <p id="finalDateText">Saturday, October 10, 2026</p>
+          </article>
+
+          <article class="detail">
+            <strong>Time</strong>
+            <p id="finalTimeText">6:00 PM</p>
+          </article>
+
+          <article class="detail">
+            <strong>Place</strong>
+            <p id="finalPlaceText">Our favorite place</p>
+          </article>
+        </div>
+
+        <p class="our-date-note" id="ourDateNote">Saturday at 7:00 PM — rooftop dinner</p>
+        <button id="downloadDateButton" class="download-button" type="button">Download date card</button>
+        <p class="final-message">I can’t wait to spend time with you. See you there.</p>
+      </div>
+    </section>
+
+    <audio id="galleryAudio" src="music.mp3/syempre.mp3" preload="auto" loop></audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
